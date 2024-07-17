@@ -31,11 +31,13 @@ export function caesarCipher(string, shiftFactor) {
     let encryptedString = "";
     for (let letter of string) {
         if (alphabet.includes(letter)) {
-            let currentIndex = alphabet.indexOf(letter);
-            encryptedString += alphabet.charAt(currentIndex+shiftFactor);
+            let currentIndex = alphabet.indexOf(letter) + shiftFactor;
+            if (currentIndex > 25) currentIndex = currentIndex-26;
+            encryptedString += alphabet.charAt(currentIndex);
         } else if (upperCaseAlphabet.includes(letter)) {
-            let currentIndex = alphabet.indexOf(letter);
-            encryptedString += upperCaseAlphabet.charAt(currentIndex+shiftFactor);
+            let currentIndex = upperCaseAlphabet.indexOf(letter) + shiftFactor;
+            if (currentIndex > 25) currentIndex = currentIndex-26;
+            encryptedString += upperCaseAlphabet.charAt(currentIndex);
         } else encryptedString += letter;
     }
     return encryptedString;

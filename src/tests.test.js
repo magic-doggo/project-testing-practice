@@ -46,14 +46,14 @@ test('caesarCipher(abc, 1) should return bcd', () => {
     expect(caesarCipher("abc",1)).toBe("bcd");
 })
 
-// test('caesarCipher(xyz, 3) should return abc; wrapping z to a', () => {
-//     expect(caesarCipher(6,3)).toBe(2);
-// })
+test('caesarCipher(xyz, 3) should return abc; wrapping z to a', () => {
+    expect(caesarCipher("xyz",3)).toBe("abc");
+})
 
-// test('caesarCipher(HeLLo, 3) should return KhOOr; case preservation', () => {
-//     expect(caesarCipher(6,3)).toBe(2);
-// })
+test('caesarCipher(HeLLo, 3) should return KhOOr; case preservation', () => {
+    expect(caesarCipher("HeLLo",3)).toBe("KhOOr");
+})
 
-// test('caesarCipher(Hello, World!, 3) should return Khoor, Zruog!; non-alphabet chars should remain same', () => {
-//     expect(caesarCipher(6,3)).toBe(2);
-// })
+test('caesarCipher(Hello, World!, 3) should return Khoor, Zruog!; non-alphabet chars should remain same', () => {
+    expect(caesarCipher("Hello, World!",3)).toBe("Khoor, Zruog!");
+})
