@@ -42,3 +42,23 @@ export function caesarCipher(string, shiftFactor) {
     }
     return encryptedString;
 }
+
+export function analyzeArray(array) {
+    let sum = 0;
+    let min = array[0];
+    let max = array[0];
+    for (let number of array) {
+      sum += number;
+      if (number < min) min = number;
+      if (number > max) max = number;
+    }
+    let length = array.length;
+    let average = sum / length;
+    
+    return {
+     average: average,
+     min: min,
+     max: max,
+     length: length
+    }
+  }
