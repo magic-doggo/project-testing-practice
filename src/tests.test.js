@@ -1,6 +1,7 @@
 import capitalize from "./functions.js";
 import { reverseString } from "./functions.js";
 import { calculator } from "./functions.js";
+import { caesarCipher } from "./functions.js";
 
 test('capitalize capitalizes first letter in asd string', () => {
     expect(capitalize("asd")).toBe("Asd");
@@ -39,3 +40,20 @@ test('calculator.multiply 3*2 to equal 6', () => {
 test('calculator.divide 6/3 to equal 2', () => {
     expect(calculator.divide(6,3)).toBe(2);
 })
+
+
+test('caesarCipher(abc, 1) should return bcd', () => {
+    expect(caesarCipher("abc",1)).toBe("bcd");
+})
+
+// test('caesarCipher(xyz, 3) should return abc; wrapping z to a', () => {
+//     expect(caesarCipher(6,3)).toBe(2);
+// })
+
+// test('caesarCipher(HeLLo, 3) should return KhOOr; case preservation', () => {
+//     expect(caesarCipher(6,3)).toBe(2);
+// })
+
+// test('caesarCipher(Hello, World!, 3) should return Khoor, Zruog!; non-alphabet chars should remain same', () => {
+//     expect(caesarCipher(6,3)).toBe(2);
+// })

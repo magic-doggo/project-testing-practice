@@ -24,3 +24,19 @@ export let calculator = {
         return num1 / num2;
     }
 }
+
+export function caesarCipher(string, shiftFactor) {
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let upperCaseAlphabet = alphabet.toUpperCase();
+    let encryptedString = "";
+    for (let letter of string) {
+        if (alphabet.includes(letter)) {
+            let currentIndex = alphabet.indexOf(letter);
+            encryptedString += alphabet.charAt(currentIndex+shiftFactor);
+        } else if (upperCaseAlphabet.includes(letter)) {
+            let currentIndex = alphabet.indexOf(letter);
+            encryptedString += upperCaseAlphabet.charAt(currentIndex+shiftFactor);
+        } else encryptedString += letter;
+    }
+    return encryptedString;
+}
